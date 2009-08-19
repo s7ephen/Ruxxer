@@ -1,0 +1,71 @@
+THINGS TO REMEMBER:
+-------------------
+
+
+VARIABLES:
+----------
+int test_int;
+long test_long;
+short test_short;
+string test_string;
+none none_type;
+
+"None"s are used as temp variables, they dont really have a type.
+
+test_int = 0x77777777
+test_long = 0x88888888
+test_short = 0x9999
+test_string = "this is a test"
+
+CONTROL FLOW:
+-------------
+if/then
+while
+
+USING RUXXER STRUCTURES:
+------------------------
+Declaration:
+    structure blingin
+
+Adding Data:
+    push(blingin, test_int);
+    push(blingin, test_long);
+    push(blingin, test_short);
+or
+    push(blingin, test_int, test_long, test_short);
+
+Setting data in a structure by name:
+    set(blingin, test_int, 0x77777777);
+
+SPECIAL RUXXER FUNCTIONS:
+-------------------------
+    The following functions are available for use in Ruxxer. 
+They are defined "within the scope" of the Ruxxer application
+being executed, as such defining functions with these 
+names will effectively overload these functions.
+
+hex()
+ord()
+length()
+recv()
+send()
+set() : In addition to this being used to assign values in specific
+        objects/types it is also used to set critical values inside
+        of comm types. 
+runs()
+traversal()
+
+A SAMPLE RUXXER APPLICATION:
+  (with a "comm" object) 
+----------------------------
+
+comm TCPClient tcpcomm
+set(tcpcomm, "127.0.0.1", 80)
+
+traversal linear
+runs 1
+
+string greeting
+greeting = "HELLO WORLD"
+send(tcpcomm, greeting)
+

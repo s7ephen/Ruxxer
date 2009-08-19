@@ -1,0 +1,13 @@
+Future Possibilities:
+---------------------
+
+
+TODOs:
+------
+--> "Insert bytes from file" that will hex escape a binary string and insert it
+    within the editor.
+
+--> RuxxerMap generation based on a session object.
+
+--> Session Object Graphing.
+

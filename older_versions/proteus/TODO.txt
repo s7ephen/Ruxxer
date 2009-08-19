@@ -1,0 +1,24 @@
+PDT WISHLIST:
+============
+ --> LongLenAsStringPDT, ShortLenAsStringPDT, etc.
+ --> CRC32PDT
+ --> ArrayPDT:
+     A special PDT that acts like a bruter because
+     it allows the user to specify data for future
+     iterations.
+
+BRUTER WISHLIST:
+================
+
+TRANSPORT WISHLIST:
+===================
+
+FEATURE WISHLIST:
+=================
+ --> FileWriterTransport makes use of epoch time, similar to dumps.
+ --> Write a module that accepts and converts a binary pcap file to a TCP-based dataflow.
+
+
+FIXES:
+=====
+

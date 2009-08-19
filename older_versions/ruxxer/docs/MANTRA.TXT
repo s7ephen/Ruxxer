@@ -1,0 +1,4 @@
+
+1. Keep the language simple.
+    Other than Ruxxer types, there should be minimal
+    special data types.

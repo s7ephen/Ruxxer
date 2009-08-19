@@ -1,0 +1,141 @@
+Translation Notes:
+------------------
+
+Slide 1:
+  Title
+
+Slide 2:
+  --> Title: "Fuzzing" te Nani? (Translator: Is this right?)
+  --> Excercising a computer program in an effort to find bugs/errors in them
+      that can maybe lead to the appication being cracked.
+  --> Slightly changes input to the computer program to find bugs in the logic
+  --> input is defined as: file data, network data, IPC 
+
+Slide 3:
+  --> Blind/Dumb (Translator Notes: "Blind" and "Dumb" here imply that something
+      is being done without intelligence, like to make a food without a recipe.)
+  --> Because it isn't smart it generates many unnecessary test cases.
+  --> Can only find simple "shallow" bugs (Translator Notes: "shallow bugs" is a
+      term we made up and will define. You can quote it directly without trying
+      to translate)
+ 
+Slide 4:
+  --> The program's protocols are re-created in the fuzzer.
+  --> When the Fuzzer program understands the protocol, it can test more intelligently.
+       
+Slide 5:
+  --> Title
+  --> Rewriting protocols by hand take a lot of time.
+  --> Program code for one Fuzzing Program is not reusable for other tasks
+
+Slide 6:
+  --> Title
+  --> Example: Type-Length-Value 
+  --> Type: Type Field
+  --> Length: length of next section
+  --> Data: variable length data
+
+Slide 7:
+  --> Title 
+  --> Data that is not useful to the target application will be ignored by the
+      application
+  --> Thus, a mutation of data that does not adhere to the protocol is not
+        a useful mutation.
+Slide 8:
+  --> Title
+  --> Fuzzer understands the protocol
+  --> Creates useful data mutations
+  --> Preserves protocol fields we do not want to mutate
+  --> Able to calculate data lengths
+
+Slide 9:
+  --> There are many fuzzers currently available but we are going to limit
+       out investigation to several of the main ones:
+
+Slide 10:
+    --> (Translator Notes: 
+        The whole slide, title and all but not the text in the red box.)
+
+Slide 11:
+    --> Stand-alone program that does not need Python
+    --> Simple scripting language that non-programmers can use to get fast
+        results.
+    --> Experts can ignore the scripting language and use the powerful API
+
+Slide 12:
+    --> API's are not easy to use and have a 'learning curve'. having a GUI
+        program in the form of an IDE makes the framework more usable for 
+        non-experts without sacrificing the power needed by experts.
+
+Slide 14:
+    --> Fuzzing has evolved
+    --> Fuzzing is being done by QualityAssurance (QA) people as well as
+        security researchers
+    --> Fuzzing is becoming a part of SDLC
+    --> Security experst need 'cutting edge' tools that solve their Fuzzing
+        problems
+
+Slide 15:
+    -->  Engineers with limited knowledge need to begin fuzzing on a limited
+        budget
+        ..BUT...
+    --> Security experts are not willing to sacrifice power for ease-of-use
+
+Slide 16:
+    --> APIs are extremely powerful but get few immediate results because
+        they are difficult to use
+    --> The solution is to make the framework easy to use by having its own
+        programming language
+
+
+Slide 17:
+    --> Introducing
+
+Slide 18:
+    --> Title
+    --> Ruxxer is a powerfule Fuzzing API with its own language
+    --> It is composed of two pieces
+
+Slide 19:
+    --> Title
+    --> "I understand that, but let me see what it looks like first please."
+
+Slide 23:
+    --> Containers
+
+Slide 24:
+    --> Delivers data to the target program
+    --> We use RuXXer so we are always adding new features
+
+Slide 27:
+    --> Ruxxer "Structure" are designed to represent comlex data
+
+Slide 30:
+    --> Mutate data in a specific way
+    --> make program code reusable
+    --> eliminate useless tests
+    --> extensable and easy to add on to
+
+Slide 40:
+    --> You get the idea
+
+Slide 41:
+    --> Data mutations have NxN mathematical relationship
+    --> Graph Theory of Mathematics helps us compute data mutations intelligently
+
+Slide 58:
+    --> Title (Translator Notes: "Resources" here is used to describe computer
+resources like memory or CPU speed. Basically it means the "capabilities" of the
+computer that runs the program)
+    --> Complex Protocols with many nested structures can result in thosands or
+millions of mutations
+    --> This requires much memory and cpu
+    --> Ruxxer eliminates this requirement with its algorithms
+
+Slide 60:
+    --> "Dumb Fuzzing" is not sufficient
+    --> Currently, most Fuzzers sacrifice easy usability for power
+    --> Ruxxer solves all these problems wih innovative mathematics and
+        and an easy-to-use programming language.
+
+    
