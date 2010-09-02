@@ -40,6 +40,25 @@
     S.A. Ridley
     Oct 2006
 """
+
+###
+# Using Blitzer as an engine to power your fuzzing:
+# >>> from blitzer import *
+# >>> fb = FileBruter("/Users/s7ephen/Desktop/tamatebako.png", 3,4,4,'linear')
+# 10260 chunks
+# 5 mungers
+# 51300 permutations
+# >>> fb.permute() 
+# Serving Iteration (1/51300) of '/Users/s7ephen/Desktop/tamatebako.png'.
+# we are on munge 0 chunk 0
+# retrieving bytes at munger 0 of chunk 0
+# '\x89PNG\r\n\x1a\n\x00\x00\x00\ ...........
+# ...........
+###
+# Yes, it is really that simple. each time you call permute() it will generate
+# the next mutation of the contents of the file. ^_^
+#
+
 try:
     import struct,string,cgi,time,getopt,sys, socket, BaseHTTPServer
     from os import curdir, sep
@@ -96,6 +115,10 @@ class FileBruter:
         self._packop = e_pack+s_pack
 
     def calc_perms(self):
+        """ 
+            I dont know what the fuck I was thinking here. Just use 'linear' for
+            now until I can figure out what halfbaked idea this was.
+        """
         if self.munge_mode == 'exponential':
             perms = len(self.mungers)**len(self.chunks) #the total number of variations of the file.
         if self.munge_mode == 'linear':
@@ -274,7 +297,7 @@ class FileBruter:
         val -= 1
         val = struct.pack(self._packop, val)
         return val
-    
+
     def munge_current(self, chunk_index):
         return self.chunks[chunk_index]
     
@@ -283,6 +306,9 @@ class FileBruter:
     
     def munge_min(self, chunk_index):
         return self.chunks[chunk_index]
+   
+    def munge_full_byte_range(self, chunk_index):
+        pass
 
 class MyHTTPServer(HTTPServer):
     """
